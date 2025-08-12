@@ -7,7 +7,7 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     fps = pygame.time.Clock()
-    dt = 0
+    dt = 1
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
 
     # looping
@@ -19,6 +19,7 @@ def main():
                 running = False
 
         screen.fill("black")
+        player.update(dt)
         player.draw(screen)
         pygame.display.flip()
 
